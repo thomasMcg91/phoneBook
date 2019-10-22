@@ -35,6 +35,18 @@ public class MobilePhone {
         return true;
     }
 
+    //remove contact
+    public boolean removeContact (Contacts contacts){
+        int a = findContact(contacts);
+        if (a<0){
+            System.out.println("cannot find contact");
+            return false;
+        }
+
+        this.myContacts.remove(a);
+        return true;
+    }
+
     //two overload methods, first of which will return index position
     private int findContact (Contacts contacts){
        return this.myContacts.indexOf(contacts);
@@ -49,5 +61,13 @@ public class MobilePhone {
             }
         }
         return -1;
+    }
+
+    //return data from another method
+    public String queryContact (Contacts contacts){
+        if(findContact(contacts)>=0){
+            return contacts.getName();
+        }
+        return null;
     }
 }
