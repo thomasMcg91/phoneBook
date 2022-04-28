@@ -11,6 +11,8 @@ public class Contacts {
         this.PhoneNumber=phoneNumber;
     }
 
+    private String variable;
+
     public String getName() {
         return Name;
     }
